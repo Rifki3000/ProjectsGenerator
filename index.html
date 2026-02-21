@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifky Font Generator - 60+ Font Styles & Glitch Effect</title>
+    <meta name="description" content="Generate cool fonts for your TikTok bio, videos, and captions with 60+ unique styles including glitch effects">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-font logo-icon"></i>
+                    <span class="logo-text">TikTok<span class="logo-highlight">Fonts</span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#generator" class="nav-link">Generator</a></li>
+                    <li class="nav-item"><a href="#styles" class="nav-link">Font Styles</a></li>
+                    <li class="nav-item"><a href="#glitch" class="nav-link">Glitch Effect</a></li>
+                    <li class="nav-item"><a href="#trending" class="nav-link">Trending</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Make Your TikTok</span>
+                        <span class="title-line gradient-text">Stand Out</span>
+                    </h1>
+                    <p class="hero-description">
+                        Generate unique and stylish fonts for your TikTok bio, videos, and captions. 
+                        Choose from 60+ amazing styles including our exclusive glitch effects.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#generator" class="btn btn-primary">
+                            <i class="fas fa-magic"></i>
+                            Start Creating
+                        </a>
+                        <a href="#styles" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i>
+                            View Styles
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-quote-right"></i>
+                        <p class="preview-text">TikTok Fonts</p>
+                        <div class="card-stats">
+                            <span><i class="fas fa-heart"></i> 60+ Styles</span>
+                            <span><i class="fas fa-bolt"></i> Glitch FX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape"></div>
+    </section>
+
+    <!-- MAIN GENERATOR SECTION -->
+    <section id="generator" class="generator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Font Generator</span>
+                <h2 class="section-title">Create Your <span class="gradient-text">Unique Style</span></h2>
+                <p class="section-description">
+                    Type your text below and watch it transform into amazing font styles
+                </p>
+            </div>
+
+            <div class="generator-main">
+                <!-- Input Area -->
+                <div class="input-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-pencil-alt"></i> Your Text</h3>
+                        <div class="input-actions">
+                            <button class="action-btn" id="clearBtn" title="Clear text">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <button class="action-btn" id="pasteBtn" title="Paste">
+                                <i class="fas fa-paste"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <textarea 
+                            id="inputText" 
+                            class="input-field" 
+                            placeholder="Type something cool for your TikTok..."
+                            maxlength="500"
+                        >TikTok Fonts</textarea>
+                        <div class="char-counter">
+                            <span id="charCount">13</span>/500
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Sample Texts -->
+                    <div class="sample-texts">
+                        <span class="sample-label">Try samples:</span>
+                        <div class="sample-buttons">
+                            <button class="sample-btn" data-text="TikTok Viral">TikTok Viral</button>
+                            <button class="sample-btn" data-text="FYP">FYP</button>
+                            <button class="sample-btn" data-text="For You">For You</button>
+                            <button class="sample-btn" data-text="Trending">Trending</button>
+                            <button class="sample-btn" data-text="Viral Video">Viral Video</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Font Categories -->
+                <div class="categories-bar">
+                    <button class="category-btn active" data-category="all">All Styles</button>
+                    <button class="category-btn" data-category="fancy">Fancy</button>
+                    <button class="category-btn" data-category="cool">Cool</button>
+                    <button class="category-btn" data-category="cute">Cute</button>
+                    <button class="category-btn" data-category="bold">Bold</button>
+                    <button class="category-btn" data-category="glitch">Glitch</button>
+                    <button class="category-btn" data-category="aesthetic">Aesthetic</button>
+                </div>
+
+                <!-- FONTS GRID - 60+ Styles -->
+                <div class="fonts-grid" id="fontsGrid">
+                    <!-- Font cards akan di-generate oleh JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLITCH EFFECT SHOWCASE -->
+    <section id="glitch" class="glitch-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Glitch Effects</span>
+                <h2 class="section-title">Cyber <span class="glitch-text" data-text="Glitch">Glitch</span> Style</h2>
+                <p class="section-description">
+                    Exclusive glitch effects that make your text stand out
+                </p>
+            </div>
+
+            <div class="glitch-showcase">
+                <div class="glitch-card" data-glitch="basic">
+                    <div class="glitch-preview">
+                        <div class="glitch-wrapper">
+                            <div class="glitch" data-text="GLITCH">GLITCH</div>
+                        </div>
+                    </div>
+                    <h4>Basic Glitch</h4>
+                    <button class="copy-glitch-btn" data-style="glitch-basic">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <div class="glitch-card" data-glitch="rgb">
+                    <div class="glitch-preview">
+                        <div class="glitch-wrapper">
+                            <div class="glitch-rgb" data-text="RGB">RGB</div>
+                        </div>
+                    </div>
+                    <h4>RGB Split</h4>
+                    <button class="copy-glitch-btn" data-style="glitch-rgb">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <div class="glitch-card" data-glitch="scan">
+                    <div class="glitch-preview">
+                        <div class="glitch-wrapper">
+                            <div class="glitch-scan" data-text="SCAN">SCAN</div>
+                        </div>
+                    </div>
+                    <h4>Scan Lines</h4>
+                    <button class="copy-glitch-btn" data-style="glitch-scan">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <div class="glitch-card" data-glitch="wave">
+                    <div class="glitch-preview">
+                        <div class="glitch-wrapper">
+                            <div class="glitch-wave" data-text="WAVE">WAVE</div>
+                        </div>
+                    </div>
+                    <h4>Wave Glitch</h4>
+                    <button class="copy-glitch-btn" data-style="glitch-wave">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <div class="glitch-card" data-glitch="static">
+                    <div class="glitch-preview">
+                        <div class="glitch-wrapper">
+                            <div class="glitch-static" data-text="STATIC">STATIC</div>
+                        </div>
+                    </div>
+                    <h4>Static Noise</h4>
+                    <button class="copy-glitch-btn" data-style="glitch-static">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <div class="glitch-card" data-glitch="cyber">
+                    <div class="glitch-preview">
+                        <div class="glitch-wrapper">
+                            <div class="glitch-cyber" data-text="CYBER">CYBER</div>
+                        </div>
+                    </div>
+                    <h4>Cyberpunk</h4>
+                    <button class="copy-glitch-btn" data-style="glitch-cyber">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRENDING STYLES SECTION -->
+    <section id="trending" class="trending">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Trending Now</span>
+                <h2 class="section-title">Popular on <span class="gradient-text">TikTok</span></h2>
+                <p class="section-description">
+                    Most used font styles by TikTok creators this week
+                </p>
+            </div>
+
+            <div class="trending-grid">
+                <div class="trending-card" data-rank="1">
+                    <div class="trending-rank">#1</div>
+                    <div class="trending-content">
+                        <h3>Glitch Effect</h3>
+                        <p class="trending-stats">
+                            <i class="fas fa-users"></i> 2.5M uses
+                        </p>
+                        <div class="trending-preview">𝔾𝕝𝕚𝕥𝕔𝕙 𝔼𝕗𝕗𝕖𝕔𝕥</div>
+                    </div>
+                </div>
+
+                <div class="trending-card" data-rank="2">
+                    <div class="trending-rank">#2</div>
+                    <div class="trending-content">
+                        <h3>Bubble Style</h3>
+                        <p class="trending-stats">
+                            <i class="fas fa-users"></i> 1.8M uses
+                        </p>
+                        <div class="trending-preview">Ⓑⓤⓑⓑⓛⓔ Ⓢⓣⓨⓛⓔ</div>
+                    </div>
+                </div>
+
+                <div class="trending-card" data-rank="3">
+                    <div class="trending-rank">#3</div>
+                    <div class="trending-content">
+                        <h3>Mathematical</h3>
+                        <p class="trending-stats">
+                            <i class="fas fa-users"></i> 1.4M uses
+                        </p>
+                        <div class="trending-preview">𝕄𝕒𝕥𝕙𝕖𝕞𝕒𝕥𝕚𝕔𝕒𝕝</div>
+                    </div>
+                </div>
+
+                <div class="trending-card" data-rank="4">
+                    <div class="trending-rank">#4</div>
+                    <div class="trending-content">
+                        <h3>Script Style</h3>
+                        <p class="trending-stats">
+                            <i class="fas fa-users"></i> 1.1M uses
+                        </p>
+                        <div class="trending-preview">𝒮𝒸𝓇𝒾𝓅𝓉 𝒮𝓉𝓎𝓁𝑒</div>
+                    </div>
+                </div>
+
+                <div class="trending-card" data-rank="5">
+                    <div class="trending-rank">#5</div>
+                    <div class="trending-content">
+                        <h3>Double Strike</h3>
+                        <p class="trending-stats">
+                            <i class="fas fa-users"></i> 980K uses
+                        </p>
+                        <div class="trending-preview">D̶o̶u̶b̶l̶e̶ S̶t̶r̶i̶k̶e̶</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-time Preview</h3>
+                    <p>See your text transform instantly as you type with our live preview feature</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3>One-Click Copy</h3>
+                    <p>Copy any font style with a single click and paste directly to TikTok</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>60+ Font Styles</h3>
+                    <p>Wide variety of fonts including fancy, cool, cute, and glitch effects</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Perfectly optimized for all devices - create fonts on the go</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Recent Styles</h3>
+                    <p>Quick access to your recently used and favorite font styles</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Free</h3>
+                    <p>All font styles are completely free to use, no hidden costs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW TO USE SECTION -->
+    <section class="how-to-use">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Simple Steps</span>
+                <h2 class="section-title">How to <span class="gradient-text">Use</span></h2>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <h3>Type Your Text</h3>
+                    <p>Enter the text you want to transform in the input box above</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Choose a Style</h3>
+                    <p>Browse through 60+ font styles and click on your favorite</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3>Copy & Paste</h3>
+                    <p>Copy the transformed text and paste it to your TikTok bio or video</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECENTLY COPIED SECTION -->
+    <section class="recent-copied" id="recentCopied">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">History</span>
+                <h2 class="section-title">Recently <span class="gradient-text">Copied</span></h2>
+            </div>
+
+            <div class="recent-list" id="recentList">
+                <!-- Recent items akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with New Fonts</h2>
+                <p>Get notified when we add new font styles and glitch effects</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">FAQ</span>
+                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I use these fonts on TikTok?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply type your text, choose a font style, click copy, and paste it into your TikTok bio, captions, or video text overlay.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are these fonts free to use?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All 60+ font styles are completely free to use. No hidden costs or subscriptions required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will these fonts work on mobile?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our generator is fully responsive and works perfectly on all mobile devices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often do you add new fonts?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We add new font styles and glitch effects every week based on TikTok trends and user requests.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I save my favorite fonts?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Click the star icon on any font to save it to your favorites. You can access them anytime.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are glitch effects?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Glitch effects are special text styles that create a distorted, cyberpunk look with RGB splitting, scan lines, and static effects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-font"></i>
+                        <span>TikTokFonts</span>
+                    </div>
+                    <p>Generate amazing fonts for your TikTok content with 60+ unique styles including glitch effects.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#generator">Generator</a></li>
+                        <li><a href="#styles">Font Styles</a></li>
+                        <li><a href="#glitch">Glitch Effects</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Font Categories</h4>
+                    <ul>
+                        <li><a href="#">Fancy Fonts</a></li>
+                        <li><a href="#">Cool Fonts</a></li>
+                        <li><a href="#">Cute Fonts</a></li>
+                        <li><a href="#">Bold Fonts</a></li>
+                        <li><a href="#">Aesthetic Fonts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Report Bug</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 TikTokFonts. All rights reserved. Not affiliated with TikTok.</p>
+                <div class="footer-stats">
+                    <span><i class="fas fa-font"></i> 60+ Fonts</span>
+                    <span><i class="fas fa-bolt"></i> Glitch FX</span>
+                    <span><i class="fas fa-users"></i> 100K+ Users</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Copied to clipboard!</span>
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- MODAL FOR FONT PREVIEW -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Font Preview</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-large" id="modalPreview"></div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="modalCopy">
+                        <i class="far fa-copy"></i> Copy Font
+                    </button>
+                    <button class="btn btn-secondary" id="modalFavorite">
+                        <i class="far fa-star"></i> Add to Favorites
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
